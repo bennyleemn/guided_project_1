@@ -6,11 +6,12 @@ let planetsSpan;
 let episode_idSpan;
 let charactersSpan;
 let opening_crawl;
+let charactersUl;
 const baseUrl = `http://localhost:9001/api`;
 
 // Runs on page load
 addEventListener('DOMContentLoaded', () => {
-    film = document.querySelector('h1#film');
+    film = document.querySelector('h1#name');
     titleSpan = document.querySelector('span#title');
     directorSpan = document.querySelector('span#director');
     release_dateSpan = document.querySelector('span#release_date');
@@ -18,6 +19,8 @@ addEventListener('DOMContentLoaded', () => {
     episode_idSpan = document.querySelector('span#episode_id');
     charactersSpan = document.querySelector('span#characters');
     opening_crawlSpan = document.querySelector('span#opening_crawl');
+    charactersUl = document.querySelector('#characters>ul');
+
     const sp = new URLSearchParams(window.location.search)
     const id = sp.get('id')
     getFilm(id)
@@ -67,17 +70,17 @@ const renderFilms = film => {
 
     planetsSpan.textContent = film?.planets;
     /*TODO: FixLis
-    const planetsLis = film?.planet?.map(film => `<li><a href="/film.html?id=${film.id}">${film.title}</li>`)
+    const planetsList = film?.planet?.map(film => `<li><a href="/film.html?id=${film.id}">${film.title}</li>`)
     filmsUl.innerHTML = planetsLis.join("");
     */
     episode_idSpan.textContent = film?.episode_id;
 
-    charactersSpan.textContent = film?.characters;
+   /* charactersSpan.textContent = film?.characters;*/
     
-    /*TODO: Fix Lis
-    const filmsLis = character?.film?.characters?.map(film => `<li><a href="/film.html?id=${film.id}">${film.title}</li>`)
-    filmsUl.innerHTML = filmsLis.join("");
-    */
+    /*TODO: Fix List*/
+    const charactersList = film?.characters?.map(film => `<li><a href="/film.html?id=${film.id}">${film.character}</li>`) 
+    charactersUl.innerHTML = charactersList.join("");
+    
 
     opening_crawlSpan.textContent = film?.opening_crawl;
 }
