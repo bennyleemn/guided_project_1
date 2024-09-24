@@ -59,7 +59,7 @@ async function fetchPlanets(id) {
 }
 
 const renderFilms = film => {
-    document.title = `SWAPI - ${film?.tile}`;
+    document.title = document.title;
     film.textContent = "Star Wars Rocks!";
     titleSpan.textContent = film?.title;
     directorSpan.textContent = film?.director;
@@ -78,6 +78,6 @@ const renderFilms = film => {
     const filmsLis = character?.film?.characters?.map(film => `<li><a href="/film.html?id=${film.id}">${film.title}</li>`)
     filmsUl.innerHTML = filmsLis.join("");
     */
-   
+
     opening_crawlSpan.textContent = film?.opening_crawl;
 }
