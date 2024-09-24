@@ -23,6 +23,7 @@ async function getCharacter(id) {
   let character;
   try {
     character = await fetchCharacter(id)
+    console.log("CHARACTER:", character);
     character.homeworld = await fetchHomeworld(character)
     character.films = await fetchFilms(character)
   }
