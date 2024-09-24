@@ -121,3 +121,30 @@ section#films a {
   border-radius: 5px;
   border: 1px solid var(--dark2);
 }
+
+/*Attempt at getting opening credits for film to 'crawl'*/
+#opening-crawl-container {
+  position: relative;
+  overflow: hidden;
+  height: 100vh;
+  background: black;
+  color: yellow; 
+  perspective: 400px; 
+}
+
+#opening_crawl {
+  position: absolute;
+  bottom: 0; /* Start at the bottom */
+  width: 100%;
+  font-size: 2em; 
+  animation: crawl 15s linear forwards; 
+}
+
+@keyframes crawl {
+  0% {
+      transform: translateY(100%); /* Start below the viewport */
+  }
+  100% {
+      transform: translateY(-100%); /* End above the viewport */
+  }
+}
