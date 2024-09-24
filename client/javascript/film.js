@@ -66,25 +66,18 @@ const renderFilms = film => {
     release_dateSpan.textContent = film?.release_date;
 
     planetsSpan.textContent = film?.planets;
+    /*TODO: FixLis
     const planetsLis = film?.planet?.map(film => `<li><a href="/film.html?id=${film.id}">${film.title}</li>`)
     filmsUl.innerHTML = planetsLis.join("");
-
+    */
     episode_idSpan.textContent = film?.episode_id;
 
     charactersSpan.textContent = film?.characters;
+    
+    /*TODO: Fix Lis
     const filmsLis = character?.film?.characters?.map(film => `<li><a href="/film.html?id=${film.id}">${film.title}</li>`)
     filmsUl.innerHTML = filmsLis.join("");
-    
+    */
+   
     opening_crawlSpan.textContent = film?.opening_crawl;
 }
-
-/*
-let film;
-let titleSpan;
-let directorSpan;
-let release_dateSpan;
-let planetsSpan;
-let episode_idSpan;
-let charactersSpan;
-let opening_crawl;
-*/
